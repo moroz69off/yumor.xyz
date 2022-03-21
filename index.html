@@ -78,7 +78,7 @@
 				scene.add( grid );
 				// model
 				const loader = new FBXLoader();
-				loader.load( 'https://yumor.xyz/res/_3dmodel/SambaDancing.fbx', function ( object ) {
+				loader.load( '../res/_3dmodel/SambaDancing.fbx', function ( object ) {
 					mixer = new THREE.AnimationMixer( object );
 					const action = mixer.clipAction( object.animations[ 0 ] );
 					action.play();
