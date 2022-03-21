@@ -6,7 +6,7 @@ ThreeInit();
 
 
 var m_div = document.createElement('div');
-m_div.innerHTML = '<p>Изменяемые данные:</p><input type="number" id="num_data" min="1" max="10" value="1">';
+m_div.innerHTML = '<p>change this</p><input type="number" id="num_data" min="1" max="10" value="1">';
 
 m_div.style.position = 'absolute';
 m_div.style.left = 15 + 'px';
