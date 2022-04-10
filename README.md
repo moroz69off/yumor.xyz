@@ -1,4 +1,2 @@
 # yumor.xyz
-*repair*
-
-*Temporary*
+*repair site*
