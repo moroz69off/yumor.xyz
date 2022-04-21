@@ -66,7 +66,7 @@ function ThreeInit() {
         };
 
         var onError = function(xhr) { };
-        var texture_path="../res/d3dmodel/texture/HeadLampRC_v3UVbodyMeet_v5.png";
+        var texture_path="../res/models/texture/HeadLampRC_v3UVbodyMeet_v5.png";
         loader.load(texture_path, function(image) {
             textureBody.image = image;
             textureBody.needsUpdate = true;
@@ -74,7 +74,7 @@ function ThreeInit() {
 
         var meshes = [];
         var objLoader = new THREE.OBJLoader();
-        var model_path="../res/d3dmodel/lampHead.obj";
+        var model_path="../res/models/lampHead.obj";
         objLoader.load(model_path, function(object) {
             object.traverse(function(child) {
                 if (child instanceof THREE.Mesh) {
@@ -87,7 +87,7 @@ function ThreeInit() {
             obj_body.position.x = 0;
             obj_body.position.z = -2.5;
             obj_body.rotation.y = Math.PI / 2;
-            var mapHeightBody = new THREE.TextureLoader().load("../res/d3dmodel/texture/HeadLampRC_v3UVbodyMeet_v5.png");
+            var mapHeightBody = new THREE.TextureLoader().load("../res/models/texture/HeadLampRC_v3UVbodyMeet_v5.png");
             obj_body.material = new THREE.MeshPhongMaterial({ map: textureBody, specular: 0xfceed2, 
 				bumpMap: mapHeightBody, bumpScale: 0.08, shininess: 15 });
             scene.add(obj_body);
