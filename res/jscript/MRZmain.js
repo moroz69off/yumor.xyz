@@ -54,8 +54,6 @@ function ThreeInit() {
 
         var manager = new THREE.LoadingManager();
         var loader = new THREE.ImageLoader(manager);
-        manager.onProgress = function(item, loaded, total) {
-        };
         var textureBody = new THREE.Texture();
 
         var onProgress = function(xhr) {
@@ -66,6 +64,7 @@ function ThreeInit() {
         };
 
         var onError = function(xhr) { };
+
         var texture_path="../../res/models/texture/HeadLampRC_v3UVbodyMeet_v5.png";
         loader.load(texture_path, function(image) {
             textureBody.image = image;
