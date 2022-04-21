@@ -74,7 +74,7 @@ function ThreeInit() {
 
         var meshes = [];
         var objLoader = new THREE.OBJLoader();
-        var model_path="../res/models/lampHead.obj";
+        var model_path="../../res/models/lampHead.obj";
         objLoader.load(model_path, function(object) {
             object.traverse(function(child) {
                 if (child instanceof THREE.Mesh) {
