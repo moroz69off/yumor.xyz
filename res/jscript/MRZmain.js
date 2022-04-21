@@ -20,7 +20,7 @@ m_div.onmouseover = function(e) {
 	controls.enabled = false;
 };
 m_div.onmouseout = function(e) {
-	m_div.style.background = '';
+	m_div.style.background = 'green';
 	controls.enabled = true;
 }
 
@@ -86,7 +86,7 @@ function ThreeInit() {
             obj_body.position.x = 0;
             obj_body.position.z = -2.5;
             obj_body.rotation.y = Math.PI / 2;
-            var mapHeightBody = new THREE.TextureLoader().load("../../res/models/texture/HeadLampRC_v3UVbodyMeet_v5.png");
+            var mapHeightBody = new THREE.TextureLoader().load(texture_path);
             obj_body.material = new THREE.MeshPhongMaterial({ map: textureBody, specular: 0xfceed2, 
 				bumpMap: mapHeightBody, bumpScale: 0.08, shininess: 15 });
             scene.add(obj_body);
