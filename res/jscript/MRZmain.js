@@ -1,6 +1,6 @@
 var obj_body = null;
 var controls = null;
-
+import { OrbitControls } from "../../res/jscript/OrbitControls.js";
 ThreeInit();
 //var num_value = 1;
 
@@ -66,7 +66,7 @@ function ThreeInit() {
         };
 
         var onError = function(xhr) { };
-        var texture_path="../res/models/texture/HeadLampRC_v3UVbodyMeet_v5.png";
+        var texture_path="../../res/models/texture/HeadLampRC_v3UVbodyMeet_v5.png";
         loader.load(texture_path, function(image) {
             textureBody.image = image;
             textureBody.needsUpdate = true;
@@ -87,12 +87,12 @@ function ThreeInit() {
             obj_body.position.x = 0;
             obj_body.position.z = -2.5;
             obj_body.rotation.y = Math.PI / 2;
-            var mapHeightBody = new THREE.TextureLoader().load("../res/models/texture/HeadLampRC_v3UVbodyMeet_v5.png");
+            var mapHeightBody = new THREE.TextureLoader().load("../../res/models/texture/HeadLampRC_v3UVbodyMeet_v5.png");
             obj_body.material = new THREE.MeshPhongMaterial({ map: textureBody, specular: 0xfceed2, 
 				bumpMap: mapHeightBody, bumpScale: 0.08, shininess: 15 });
             scene.add(obj_body);
         }, onProgress, onError);
-        controls = new THREE.OrbitControls(camera);
+        controls = new OrbitControls(camera, renderer.domElement);
 
         var render = function() {
             requestAnimationFrame(render);
