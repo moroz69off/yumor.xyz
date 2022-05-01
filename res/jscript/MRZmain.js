@@ -4,6 +4,12 @@ import { OrbitControls } from "../../res/jscript/OrbitControls.js";
 ThreeInit();
 //var num_value = 1;
 
+var progressBar = document.createElement("div");
+progressBar.id = 'progressBar';
+progressBar.style.backgroundColor = '#0ff';
+progressBar.style.display = 'block';
+progressBar.style.height = '20px';
+document.body.appendChild(progressBar);
 
 var m_div = document.createElement('div');
 m_div.innerHTML = '<p>change this</p><input type="number" id="num_data" min="1" max="10" value="1">';
@@ -25,9 +31,11 @@ m_div.onmouseout = function(e) {
 }
 
 var m_numer = document.getElementById('num_data');
-m_numer.onclick=function(){
+/*
+ * m_numer.onclick=function(){
 	obj_body.scale.set( 1/m_numer.value, 1/m_numer.value, 1/m_numer.value );
 };
+*/
 
 function ThreeInit() {
     window.onload = function() {
@@ -60,12 +68,7 @@ function ThreeInit() {
             if (xhr.lengthComputable) {
                 var percentComplete = xhr.loaded / xhr.total * 100;
                 console.log(Math.round(percentComplete, 2) + '% downloaded');
-                let progressBar = document.createElement("div");
-                progressBar.style.backgroundColor = 0x0ff;
-                progressBar.style.width = document.body.width / 4;
-                progressBar.style.height = 10px;
-                document.body.appendChild(progressBar);
-                
+                progressBar.style.width = percentComplete + '%';
             }
         };
 
