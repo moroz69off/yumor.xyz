@@ -25,9 +25,9 @@ m_div.onmouseout = function(e) {
 }
 
 var m_numer = document.getElementById('num_data');
-//m_numer.onclick=function(){
-//	obj_body.scale.set( 1/m_numer.value, 1/m_numer.value, 1/m_numer.value );
-//};
+m_numer.onclick=function(){
+	obj_body.scale.set( 1/m_numer.value, 1/m_numer.value, 1/m_numer.value );
+};
 
 function ThreeInit() {
     window.onload = function() {
@@ -60,6 +60,12 @@ function ThreeInit() {
             if (xhr.lengthComputable) {
                 var percentComplete = xhr.loaded / xhr.total * 100;
                 console.log(Math.round(percentComplete, 2) + '% downloaded');
+                let progressBar = document.createElement("div");
+                progressBar.style.backgroundColor = 0x0ff;
+                progressBar.style.width = document.body.width / 4;
+                progressBar.style.height = 10px;
+                document.body.appendChild(progressBar);
+                
             }
         };
 
