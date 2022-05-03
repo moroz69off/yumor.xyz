@@ -7,16 +7,19 @@
 */
 
 var data = [];
-var result = "";
+var result = null;
 var mrz_parser = document.createElement("div");
 
 Init();
 
 function Init () {
 	window.onload = function () {
-		result = "result ";
 
-		mrz_parser.innerHTML = '<p>parse result</p>' + result + '<ruby><rt>₽</rt><rp>ruble</rp></ruby>';
+
+
+		result = 100;
+
+		mrz_parser.innerHTML = '<p>parse result: ' + result + '<ruby><rt>₽</rt><rp>ruble</rp></ruby></p>';
 
 		document.body.appendChild(mrz_parser);
 	}
