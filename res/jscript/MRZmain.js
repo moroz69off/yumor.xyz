@@ -85,23 +85,23 @@ function ThreeInit() {
         var meshes = [];
         var objLoader = new THREE.OBJLoader();
         var model_path="../../res/models/lampHead.obj";
-        objLoader.load(model_path, function(object) {
-            object.traverse(function(child) {
-                if (child instanceof THREE.Mesh) {
-                    meshes.push(child);
-                }
-            });
-            obj_body = meshes[0];
-            obj_body.rotation.x = 0;
-            obj_body.position.y = 0;
-            obj_body.position.x = 0;
-            obj_body.position.z = -2.5;
-            obj_body.rotation.y = Math.PI / 2;
-            var mapHeightBody = new THREE.TextureLoader().load(texture_path);
-            obj_body.material = new THREE.MeshPhongMaterial({ map: textureBody, specular: 0xfceed2, 
-				bumpMap: mapHeightBody, bumpScale: 0.08, shininess: 15 });
-            scene.add(obj_body);
-        }, onProgress, onError);
+//        objLoader.load(model_path, function(object) {
+//            object.traverse(function(child) {
+//                if (child instanceof THREE.Mesh) {
+//                    meshes.push(child);
+//                }
+//            });
+//            obj_body = meshes[0];
+//            obj_body.rotation.x = 0;
+//            obj_body.position.y = 0;
+//            obj_body.position.x = 0;
+//            obj_body.position.z = -2.5;
+//            obj_body.rotation.y = Math.PI / 2;
+//            var mapHeightBody = new THREE.TextureLoader().load(texture_path);
+//            obj_body.material = new THREE.MeshPhongMaterial({ map: textureBody, specular: 0xfceed2, 
+//				bumpMap: mapHeightBody, bumpScale: 0.08, shininess: 15 });
+//            scene.add(obj_body);
+//        }, onProgress, onError);
         controls = new OrbitControls(camera, renderer.domElement);
 
         var render = function() {
