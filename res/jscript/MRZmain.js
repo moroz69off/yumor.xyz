@@ -8,8 +8,10 @@ var progressBar = document.createElement("div");
 progressBar.id = 'progressBar';
 progressBar.style.backgroundColor = '#0ff';
 progressBar.style.display = 'block';
-progressBar.style.height = '20px';
-document.body.appendChild(progressBar);
+progressBar.style.position = 'absolute';
+progressBar.style.top = '48%';
+progressBar.style.left='20%';
+progressBar.style.height = '12px';
 
 var m_div = document.createElement('div');
 m_div.innerHTML = '<p>change this</p><input type="number" id="num_data" min="1" max="10" value="1">';
@@ -39,13 +41,13 @@ var m_numer = document.getElementById('num_data');
 
 function ThreeInit() {
     window.onload = function() {
+		document.body.appendChild(progressBar);
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 10000);
         var renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setClearColor(0xCFCFCF);
         document.body.appendChild(renderer.domElement);
-
 
         camera.position.y = 8.5;
 		camera.position.x = -8.777;
@@ -68,7 +70,7 @@ function ThreeInit() {
             if (xhr.lengthComputable) {
                 var percentComplete = xhr.loaded / xhr.total * 100;
                 console.log(Math.round(percentComplete, 2) + '% downloaded');
-                progressBar.style.width = percentComplete + '%';
+                progressBar.style.width = ((percentComplete/100)*60) + '%';
             }
         };
 
