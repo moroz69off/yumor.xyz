@@ -25,8 +25,6 @@ function Init () {
 }
 
 function GetResult () {
-	mrz_parser.style.border = '1px solid blue';
-
 	result = (domain_value.length + responce_value.length) * 10 * 10 * 10 * 10;
 	
 	mrz_parser.innerHTML = '<p>Result: ' + result + '₽</p>';
