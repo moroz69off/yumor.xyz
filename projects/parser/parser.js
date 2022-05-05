@@ -25,7 +25,7 @@ function Init () {
 
 function GetResult () {
 	result = (domain_value.length + responce_value.length) * 10 * 10 * 10 * 10;
-	mrz_parser.style.color = 'red';
+	mrz_parser.style.color = '#0ff';
 	mrz_parser.innerHTML = '<p>Result: ' + result + '₽</p>';
 }
 
