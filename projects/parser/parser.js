@@ -18,7 +18,7 @@ function Init () {
 	window.onload = function () {
 
 		mrz_parser.classList.add('result');
-		mrz_parser.style.color = 'cian';
+		mrz_parser.style.color = 'cyan';
 		document.body.appendChild(mrz_parser);
 	}
 }
