@@ -14,8 +14,8 @@
 	<body>
 		<div id="_container" class="container">
 			<h1>MRZ Parser</h1>
-			<input id="domain_input" type="text" name="where" onchange="GetDomain()">
-			<input id="responce_input" type="text" name="what" onchange="GetResponce()">
+			<input id="domain_input" type="text" name="where" onchange="GetDomain(event)">
+			<input id="responce_input" type="text" name="what" onchange="GetResponce(event)">
 			<input type="submit" value="Go!" onclick="GetResult()">
 		</div>
 		<script src="parser.js"></script>
