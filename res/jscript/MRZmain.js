@@ -13,26 +13,26 @@ progressBar.style.top = '48%';
 progressBar.style.left='20%';
 progressBar.style.height = '12px';
 
-var m_div = document.createElement('div');
-m_div.innerHTML = '<p>change this</p><input type="number" id="num_data" min="1" max="10" value="1">';
+//var m_div = document.createElement('div');
+//m_div.innerHTML = '<p>change this</p><input type="number" id="num_data" min="1" max="10" value="1">';
+//
+//m_div.style.position = 'absolute';
+//m_div.style.left = 15 + 'px';
+//m_div.style.top = 15 + 'px';
+//m_div.style.border = '1px solid green';
+//m_div.style.padding = '10px';
+////document.body.appendChild(m_div);
 
-m_div.style.position = 'absolute';
-m_div.style.left = 15 + 'px';
-m_div.style.top = 15 + 'px';
-m_div.style.border = '1px solid green';
-m_div.style.padding = '10px';
-//document.body.appendChild(m_div);
+//m_div.onmouseover = function(e) {
+//	m_div.style.background = 'lime';
+//	controls.enabled = false;
+//};
+//m_div.onmouseout = function(e) {
+//	m_div.style.background = 'green';
+//	controls.enabled = true;
+//}
 
-m_div.onmouseover = function(e) {
-	m_div.style.background = 'lime';
-	controls.enabled = false;
-};
-m_div.onmouseout = function(e) {
-	m_div.style.background = 'green';
-	controls.enabled = true;
-}
-
-var m_numer = document.getElementById('num_data');
+//var m_numer = document.getElementById('num_data');
 /*
  * m_numer.onclick=function(){
 	obj_body.scale.set( 1/m_numer.value, 1/m_numer.value, 1/m_numer.value );
@@ -148,7 +148,7 @@ function AddGreenCoordinateLine () {
 	);
 	GreenCoordinateLine = new THREE.Line( geometry, material );
 	scene.add( GreenCoordinateLine );
-    }
+}
 
 function AddBlueCoordinateLine () {
 	var material = new THREE.LineBasicMaterial({ color: 0x0000ff });
