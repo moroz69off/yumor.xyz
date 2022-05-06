@@ -6,18 +6,33 @@
 	<meta name="Author" content="moroz69off™" >
 	<meta name="Keywords" content="moroz69off, web-dev, бесплатно, без регистрации" >
 	<meta name="Description" content="Платформа для экспериментов moroz69off" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1" >
 	<link rel="icon" href="/favicon.ico" >
-	<link rel="stylesheet" href="style.css" >
-	<title>mrzParser</title>
+	<link rel="stylesheet" href="/style.css" >
+	<link rel="stylesheet" href="..\..\..\res/bootstrap/bootstrap.min.css">
+	<title>—•moroz69off•—</title>
  </head>
 	<body>
 		<div id="_container" class="container">
-			<h1>—•moroz69off•—</h1>
-			<input id="domain_input" type="text" name="where" onchange="GetDomain(event)">
-			<input id="responce_input" type="text" name="what" onchange="GetResponce(event)">
-			<input type="submit" value="Go!" onclick="GetResult()">
+			<div id="" class="">
+				<h1>MRZ</h1>
+				<div id="" class="container-fluid">
+					<hr>
+					<label for="domain_input">Add your domain: </label>
+					<input class="form-control" type="url" id="domain_input" name="where" onchange="GetDomain(event)" value="https://">
+					<br>
+					<label for="responce_input">Add your keywords: </label>
+					<input class="form-control" id="responce_input" type="text" name="what" onchange="GetResponce(event)">
+					<hr>
+					<input class="btn btn-primary" type="submit" value="Go!" onclick="GetResult()">
+				</div>
+			</div>
 		</div>
 		<script src="mrz.js"></script>
+		<script src="..\..\..\res/bootstrap/popper.min.js"></script>
+		<script src="..\..\..\res/bootstrap/jquery-3.6.0.min.js"></script>
+		<script src="..\..\..\res/bootstrap/bootstrap.min.js"></script>
+		
 	</body>
 </html>
