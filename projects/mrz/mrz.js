@@ -23,9 +23,11 @@ function Init () {
 }
 
 function GetResult() {
+	result = domain_value.Length + responce_value.Length;
 	if (result) {
 		mrz_.innerHTML = '<p>Result: ' + result + '₽</p>';
-    }
+	}
+	return null;
 }
 
 function GetDomain (event) {
