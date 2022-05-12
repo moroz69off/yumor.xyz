@@ -2,7 +2,23 @@
 
 /*
 
+// (1)
+var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
 
+var xhr = new XHR();
+
+// (2) запрос на другой домен :)
+xhr.open('GET', 'http://anywhere.com/request', true);
+
+xhr.onload = function() {
+  alert( this.responseText );
+}
+
+xhr.onerror = function() {
+  alert( 'Ошибка ' + this.status );
+}
+
+xhr.send();
 
 */
 
@@ -26,11 +42,10 @@ function Init () {
 }
 
 function GetResult () {
-	let xhr = new XMLHttpRequest();
+	var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+	var xhr = new XHR();
 
-	xhr.open('GET', domain_value);
-
-	xhr.send();
+	xhr.open('GET', domain_value, true);
 
 	xhr.onload = function() {
 		if (xhr.status != 200) {
@@ -44,8 +59,11 @@ function GetResult () {
 	};
 
 	xhr.onerror = function() {
-		alert(xhr.status);
+		alert('Error: ' + xhr.status);
 	};
+
+	xhr.send();
+
 	result = xhr.response;
 	mrz_.innerHTML = '<div class="container-fluid"><p>Result: ' + result + '₽</p></div>';
 }
