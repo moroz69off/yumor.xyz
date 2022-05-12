@@ -19,7 +19,7 @@ function Init () {
 
 		mrz_.classList.add('result');
 		mrz_.classList.add('container');
-		mrz_.style.color = '#c0c1c2';
+		mrz_.style.color = '#c9c9c9';
 		
 		document.body.appendChild(mrz_);
 	}
