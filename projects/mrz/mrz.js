@@ -17,6 +17,7 @@ Init();
 function Init () {
 	window.onload = function () {
 		mrz_.classList.add('result');
+		mrz_.classList.add('container');
 		mrz_.style.color = '#c0c1c2';
 		document.body.appendChild(mrz_);
 	}
@@ -28,6 +29,30 @@ function GetResult() {
 		mrz_.innerHTML = '<p>Result: ' + result + '₽</p>';
 	}
 	return null;
+}
+function GetResult () {
+	let xhr = new XMLHttpRequest();
+
+	xhr.open('GET', domain_value);
+
+	xhr.send();
+
+	xhr.onload = function() {
+		if (xhr.status != 200) {
+			console.log( 'Error: ' + xhr.status);
+			return;
+		}
+	};
+
+	xhr.onprogress = function(event) {
+		console.log(`loaded ${event.loaded} из ${event.total}`);
+	};
+
+	xhr.onerror = function() {
+		alert(xhr.status);
+	};
+	result = xhr.response;
+	mrz_.innerHTML = '<div class="container-fluid"><p>Result: ' + result + '₽</p></div>';
 }
 
 function GetDomain (event) {
