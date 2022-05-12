@@ -33,7 +33,7 @@ function GetResult() {
 
 	xhr.open('GET', domain_value, true);
 
-	xhr.setRequestHeader('Access-Control-Allow-Origin', 'vk.com');
+	xhr.setRequestHeader('Access-Control-Allow-Origin', domain_value);
 
 	xhr.onload = function () {
 		if (xhr.status != 200) {
