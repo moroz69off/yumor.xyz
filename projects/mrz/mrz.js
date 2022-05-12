@@ -40,7 +40,7 @@ function GetResult () {
 	};
 
 	xhr.onprogress = function(event) {
-		console.log(`loaded ${event.loaded} из ${event.total}`);
+		console.log(`loaded ${event.loaded} from ${event.total}`);
 	};
 
 	xhr.onerror = function() {
