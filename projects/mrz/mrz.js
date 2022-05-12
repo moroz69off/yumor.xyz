@@ -43,6 +43,7 @@ function Init () {
 
 function GetResult () {
 	var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+
 	var xhr = new XHR();
 
 	xhr.open('GET', domain_value, true);
@@ -65,6 +66,7 @@ function GetResult () {
 	xhr.send();
 
 	result = xhr.response;
+
 	mrz_.innerHTML = '<div class="container-fluid"><p>Result: ' + result + '₽</p></div>';
 }
 
