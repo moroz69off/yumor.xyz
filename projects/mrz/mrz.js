@@ -30,7 +30,10 @@ function GetResult() {
 
 	var xhr = new XHR();
 
+
 	xhr.open('GET', domain_value, true);
+
+	xhr.setRequestHeader('Access-Control-Allow-Origin', domain_value);
 
 	xhr.onload = function () {
 		if (xhr.status != 200) {
@@ -41,6 +44,7 @@ function GetResult() {
 
 	xhr.onprogress = function (event) {
 		console.log(`loaded ${event.loaded} из ${event.total}`);
+		console.log(event);
 	};
 
 	xhr.onerror = function () {
