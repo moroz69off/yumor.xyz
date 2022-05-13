@@ -25,49 +25,50 @@ function Init() {
 }
 
 function GetResult () {
-	var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+		var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
 
-	var xhr = new XHR();
-	xhr.open('GET', domain_value, true);
+		var xhr = new XHR();
+		xhr.open('GET', domain_value, true);
 
-	xhr.open('GET', domain_value, true);
+		xhr.open('GET', domain_value, true);
 
-	xhr.setRequestHeader('Access-Control-Allow-Origin', domain_value);
+		xhr.setRequestHeader('Access-Control-Allow-Origin', domain_value);
 
-	xhr.onload = function () {
-		if (xhr.status != 200) {
-			console.log('Error: ' + xhr.status);
-			return;
-		}
-	};
+		xhr.onload = function () {
+			if (xhr.status != 200) {
+				console.log('Error: ' + xhr.status);
+				return;
+			}
+		};
 
-	xhr.onprogress = function (event) {
-		console.log(`loaded ${event.loaded} из ${event.total}`);
-		console.log(event);
-		console.log(event.result);
-	};
+		xhr.onprogress = function (event) {
+			console.log(`loaded ${event.loaded} из ${event.total}`);
+			console.log(event);
+			console.log(event.result);
+		};
 
-	xhr.onerror = function () {
+		xhr.onerror = function () {
 
-	xhr.onprogress = function(event) {
-		console.log(`loaded ${event.loaded} from ${event.total}`);
-	};
+		xhr.onprogress = function(event) {
+			console.log(`loaded ${event.loaded} from ${event.total}`);
+		};
 
-	xhr.onerror = function() {
-		alert('Error: ' + xhr.status);
-	};
+		xhr.onerror = function() {
+			alert('Error: ' + xhr.status);
+		};
 
-	xhr.send();
+		xhr.send();
 
-	result = xhr.response;
+		result = xhr.response;
 
-	mrz_.innerHTML = '<div class="container-fluid"><p>Result: ' + result + '₽</p></div>';
-}
+		mrz_.innerHTML = '<div class="container-fluid"><p>Result: ' + result + '₽</p></div>';
+	}
 
-function GetDomain(event) {
-	domain_value = event.target.value;
-}
+	function GetDomain(event) {
+		domain_value = event.target.value;
+	}
 
-function GetResponce(event) {
-	responce_value = event.target.value;
+	function GetResponce(event) {
+		responce_value = event.target.value;
+	}
 }
