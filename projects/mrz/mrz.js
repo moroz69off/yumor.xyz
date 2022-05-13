@@ -20,28 +20,15 @@ function Init() {
 		mrz_.classList.add('result');
 		mrz_.classList.add('container');
 		mrz_.style.color = '#c9c9c9';
-<<<<<<< HEAD
-
-=======
-		
->>>>>>> b3c7092d0b01c7e2afe5f7c9896159a511a5ded2
 		document.body.appendChild(mrz_);
 	}
 }
 
-<<<<<<< HEAD
-function GetResult() {
-=======
 function GetResult () {
->>>>>>> b3c7092d0b01c7e2afe5f7c9896159a511a5ded2
 	var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
 
 	var xhr = new XHR();
-
-<<<<<<< HEAD
-=======
 	xhr.open('GET', domain_value, true);
->>>>>>> b3c7092d0b01c7e2afe5f7c9896159a511a5ded2
 
 	xhr.open('GET', domain_value, true);
 
@@ -54,7 +41,6 @@ function GetResult () {
 		}
 	};
 
-<<<<<<< HEAD
 	xhr.onprogress = function (event) {
 		console.log(`loaded ${event.loaded} из ${event.total}`);
 		console.log(event);
@@ -62,13 +48,12 @@ function GetResult () {
 	};
 
 	xhr.onerror = function () {
-=======
+
 	xhr.onprogress = function(event) {
 		console.log(`loaded ${event.loaded} from ${event.total}`);
 	};
 
 	xhr.onerror = function() {
->>>>>>> b3c7092d0b01c7e2afe5f7c9896159a511a5ded2
 		alert('Error: ' + xhr.status);
 	};
 
