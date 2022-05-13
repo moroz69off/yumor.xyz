@@ -1,7 +1,3 @@
-﻿################################################################################
-# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs/slnx.sqlite-journal
-/.vs/yumor.xyz/config/applicationhost.config
-/.vs/
+﻿.vs/slnx.sqlite-journal
+.vs/yumor.xyz/config/applicationhost.config
+.vs/
