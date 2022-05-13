@@ -44,11 +44,8 @@ function GetResult() {
 
 	xhr.onprogress = function (event) {
 		console.log(`loaded ${event.loaded} из ${event.total}`);
-<<<<<<< HEAD
 		console.log(event);
-=======
 		console.log(event.result);
->>>>>>> 9696ed39f947d0b164f1ee39929d22811f89b46d
 	};
 
 	xhr.onerror = function () {
