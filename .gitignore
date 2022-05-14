@@ -1,4 +1,4 @@
 ﻿.vs/
 node_modules/
-mrznod/*.json
+/projects/mrznod/*.json
 /projects/mrznod/package.json
