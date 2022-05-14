@@ -9,8 +9,8 @@
 var data = [];
 var result = null;
 var mrz_ = document.createElement("div");
-var domain_value = "a";
-var responce_value = "b";
+var domain_value = null;
+var responce_value = null;
 
 Init();
 
@@ -25,50 +25,40 @@ function Init() {
 }
 
 function GetResult () {
-		var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
 
-		var xhr = new XHR();
-		xhr.open('GET', domain_value, true);
+	var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
 
-		xhr.open('GET', domain_value, true);
+	var xhr = new XHR();
+	xhr.open('GET', domain_value, true);
 
-		xhr.setRequestHeader('Access-Control-Allow-Origin', domain_value);
+	xhr.setRequestHeader('Access-Control-Allow-Origin', domain_value);
 
-		xhr.onload = function () {
-			if (xhr.status != 200) {
-				console.log('Error: ' + xhr.status);
-				return;
-			}
-		};
+	xhr.onload = function () {
+		if (xhr.status != 200) {
+			console.log('Status: ' + xhr.status);
+			return;
+		}
+	};
 
-		xhr.onprogress = function (event) {
-			console.log(`loaded ${event.loaded} из ${event.total}`);
-			console.log(event);
-			console.log(event.result);
-		};
+	xhr.onprogress = function (event) {
+		console.log("loaded " + event.loaded + " from " + event.total);
+	};
 
-		xhr.onerror = function () {
+	xhr.onerror = function() {
+		console.log('Error: ' + xhr.status);
+	};
 
-		xhr.onprogress = function(event) {
-			console.log(`loaded ${event.loaded} from ${event.total}`);
-		};
+	xhr.send();
 
-		xhr.onerror = function() {
-			alert('Error: ' + xhr.status);
-		};
+	result = xhr.response;
 
-		xhr.send();
+	mrz_.innerHTML = '<div class="container-fluid"><p>Result: ' + result + '₽</p></div>';
+}
 
-		result = xhr.response;
-
-		mrz_.innerHTML = '<div class="container-fluid"><p>Result: ' + result + '₽</p></div>';
-	}
-
-	function GetDomain(event) {
+function GetDomain(event) {
 		domain_value = event.target.value;
-	}
+}
 
-	function GetResponce(event) {
+function GetResponce(event) {
 		responce_value = event.target.value;
-	}
 }

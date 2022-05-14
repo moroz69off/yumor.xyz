@@ -66,7 +66,7 @@
 				dirLight.shadow.camera.left = - 120;
 				dirLight.shadow.camera.right = 120;
 				scene.add( dirLight );
-				// scene.add( new THREE.CameraHelper( dirLight.shadow.camera ) );
+				// scene.add( new THREE.CameraHelper(dirLight.shadow.camera ));
 				// ground
 				const mesh = new THREE.Mesh( new THREE.PlaneGeometry( 2000, 2000 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
 				mesh.rotation.x = - Math.PI / 2;
