@@ -14,7 +14,7 @@ progressBar.style.height = '12px';
 
 function ThreeInit() {
     window.onload = function() {
-		document.body.appendChild(progressBar);
+	document.body.appendChild(progressBar);
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 10000);
         var renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -42,15 +42,15 @@ function ThreeInit() {
 
         var onProgress = function(xhr) {
             if (xhr.lengthComputable) {
-				console.log(xhr.total); // temporary
+		console.log(xhr.total); // temporary
                 var percentComplete = xhr.loaded / xhr.total * 100;
                 console.log(Math.round(percentComplete, 2) + '% downloaded');
                 progressBar.style.width = ((percentComplete/100)*60) + '%';
-				if (percentComplete >= 99)
-				{
-					progressBar.style.width = ((percentComplete/100)*60) + '%';
-					progressBar.remove();
-				}
+		if (percentComplete >= 99)
+			{
+				progressBar.style.width = ((percentComplete/100)*60) + '%';
+				progressBar.remove();
+			}
             }
         };
 
@@ -90,9 +90,9 @@ function ThreeInit() {
             renderer.render(scene, camera);
         };
 
-		AddRedCoordinateLine ();
-		AddGreenCoordinateLine ();
-		AddBlueCoordinateLine ();
+	AddRedCoordinateLine ();
+	AddGreenCoordinateLine ();
+	AddBlueCoordinateLine ();
 
 function AddRedCoordinateLine () {
 	var material = new THREE.LineBasicMaterial({ color: 0xff0000 });
