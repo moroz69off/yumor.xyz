@@ -1,5 +1,5 @@
-var obj_body = null;
 var controls = null;
+var meshes = [];
 import { OrbitControls } from "../../res/jscript/OrbitControls.js";
 ThreeInit();
 
@@ -40,8 +40,8 @@ function ThreeInit() {
 		var textureBody = new THREE.Texture();
 
 		var onProgress = function (xhr) {
-			if (xhr.lengthComputable) {
-				//console.log(xhr.total); // temporary
+			if (xhr.lengthComputable) { p
+				PBNiiiiiiiiiiii
 				var percentComplete = xhr.loaded / xhr.total * 100;
 				console.log(Math.round(percentComplete, 2) + '% downloaded');
 				progressBar.style.width = ((percentComplete / 100) * 60) + '%';
@@ -60,15 +60,16 @@ function ThreeInit() {
 			textureBody.needsUpdate = true;
 		});
 
-		var meshes = [];
-		var objLoader = new THREE.OBJLoader();
 		var model_path = "../../res/models/lampHead.obj";
+		var objLoader = new THREE.OBJLoader();
 		objLoader.load(model_path, function (object) {
 			object.traverse(function (child) {
 				if (child instanceof THREE.Mesh) {
 					meshes.push(child);
 				}
 			});
+
+			var obj_body = null;
 			obj_body = meshes[0];
 			obj_body.rotation.x = 0;
 			obj_body.position.y = 0;
@@ -94,20 +95,18 @@ function ThreeInit() {
 		AddGreenCoordinateLine();
 		AddBlueCoordinateLine();
 
-		function AddRedCoordinateLine() {
+		function AddRed__CoordinateLine() {
 			var material = new THREE.LineBasicMaterial({ color: 0xff0000 });
 			var geometry = new THREE.Geometry();
 			geometry.vertices.push(
 				new THREE.Vector3(0, 0, 0),
 				new THREE.Vector3(7, 0, 0)
 			);
-			var RedCoordinateLine = new THREE.Line(geometry, material);
-			scene.add(RedCoordinateLine);
 			geometry.vertices.push(
 				new THREE.Vector3(0, 0, 0),
 				new THREE.Vector3(-7, 0, 0)
 			);
-			RedCoordinateLine = new THREE.Line(geometry, material);
+			var RedCoordinateLine = new THREE.Line(geometry, material);
 			scene.add(RedCoordinateLine);
 		}
 
@@ -118,33 +117,30 @@ function ThreeInit() {
 				new THREE.Vector3(0, 0, 0),
 				new THREE.Vector3(0, 0, 7)
 			);
-			var GreenCoordinateLine = new THREE.Line(geometry, material);
-			scene.add(GreenCoordinateLine);
 			geometry.vertices.push(
 				new THREE.Vector3(0, 0, 0),
 				new THREE.Vector3(0, 0, -7)
 			);
-			GreenCoordinateLine = new THREE.Line(geometry, material);
+			var GreenCoordinateLine = new THREE.Line(geometry, material);
 			scene.add(GreenCoordinateLine);
 		}
 
-		function AddBlueCoordinateLine() {
+		function AddBlue_CoordinateLine() {
 			var material = new THREE.LineBasicMaterial({ color: 0x0000ff });
+
 			var geometry = new THREE.Geometry();
 			geometry.vertices.push(
 				new THREE.Vector3(0, 0, 0),
 				new THREE.Vector3(0, 7, 0)
 			);
-			var BlueCoordinateLine = new THREE.Line(geometry, material);
-			scene.add(BlueCoordinateLine);
 			geometry.vertices.push(
 				new THREE.Vector3(0, 0, 0),
 				new THREE.Vector3(0, -7, 0)
 			);
-			BlueCoordinateLine = new THREE.Line(geometry, material);
+
+			var BlueCoordinateLine = new THREE.Line(geometry, material);
 			scene.add(BlueCoordinateLine);
 		}
-
 		render();
 	};
 }
