@@ -22,9 +22,9 @@ function ThreeInit() {
 		renderer.setClearColor(0xCFCFCF);
 		document.body.appendChild(renderer.domElement);
 
-		camera.position.y = 8.5;
+		camera.position.y =  8.555;
 		camera.position.x = -8.777;
-		camera.position.z = -8.85;
+		camera.position.z = -8.888;
 
 		var light = new THREE.DirectionalLight(0xfcf9e8, 2.1);
 		scene.add(light);
@@ -40,8 +40,7 @@ function ThreeInit() {
 		var textureBody = new THREE.Texture();
 
 		var onProgress = function (xhr) {
-			if (xhr.lengthComputable) { p
-				PBNiiiiiiiiiiii
+			if (xhr.lengthComputable) {
 				var percentComplete = xhr.loaded / xhr.total * 100;
 				console.log(Math.round(percentComplete, 2) + '% downloaded');
 				progressBar.style.width = ((percentComplete / 100) * 60) + '%';
@@ -95,7 +94,7 @@ function ThreeInit() {
 		AddGreenCoordinateLine();
 		AddBlueCoordinateLine();
 
-		function AddRed__CoordinateLine() {
+		function AddRedCoordinateLine() {
 			var material = new THREE.LineBasicMaterial({ color: 0xff0000 });
 			var geometry = new THREE.Geometry();
 			geometry.vertices.push(
@@ -125,7 +124,7 @@ function ThreeInit() {
 			scene.add(GreenCoordinateLine);
 		}
 
-		function AddBlue_CoordinateLine() {
+		function AddBlueCoordinateLine() {
 			var material = new THREE.LineBasicMaterial({ color: 0x0000ff });
 
 			var geometry = new THREE.Geometry();
