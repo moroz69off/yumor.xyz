@@ -5,4 +5,5 @@
 
 */
 
-var app = null;
+let app = null;
+
