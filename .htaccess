@@ -1,0 +1,73 @@
+DirectoryIndex index.html
+AddDefaultCharset utf-8
+Options All -Indexes
+ServerSignature Off
+<IfModule mod_deflate.c>
+    AddEncoding gzip .gz
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/x-component
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/truetype
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE image/svg+xml
+    BrowserMatch "MSIE [456]" no_gzip dont-vary
+    BrowserMatch "SV1;" !no_gzip !dont-vary
+    BrowserMatch "Opera" !no_gzip !dont-vary
+    BrowserMatch "Firefox/[0-3]\." gzip-only-text/html
+    BrowserMatch "Firefox/3\.[1-9]" !gzip-only-text/html
+    BrowserMatch "Chrome/2" gzip-only-text/html
+    BrowserMatch "Safari" gzip-only-text/html
+    BrowserMatch "Konqueror" gzip-only-text/html
+</IfModule>
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 10 years"
+    <FilesMatch .*\.(html)$>
+        ExpiresActive Off
+    </FilesMatch>
+</IfModule>
+<IfModule mod_rewrite.c>
+    RewriteRule (?:^|/)(?:\..*)$ - [F]
+</IfModule>
+<FilesMatch "(readme\.md)$">
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+        Satisfy All
+    </IfModule>
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+<FilesMatch "(^#.*#|\.(bak|config|dist|in[ci]|log|psd|obj|sql|sw[op]|bat|db)|~)$">
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+        Satisfy All
+    </IfModule>
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "SAMEORIGIN"
+    <FilesMatch "\.(obj|appcache|atom|crx|css|cur|eot|f4[abpv]|flv|gif|htc|ico|jpe?g|js|json(ld)?|m4[av]|manifest|map|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|tt[cf]|vcf|vtt|webapp|web[mp]|woff|xml|xpi)$">
+        Header unset X-Frame-Options
+    </FilesMatch>
+</IfModule>
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+RewriteEngine On
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
