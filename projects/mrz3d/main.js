@@ -13,16 +13,16 @@ progressBar.style.left = '20%';
 progressBar.style.height = '12px';
 
 function ThreeInit() {
-	window.onload = function () {
-		document.body.appendChild(progressBar);
-		var scene = new THREE.Scene();
-		var camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 10000);
-		var renderer = new THREE.WebGLRenderer({ antialias: true });
-		renderer.setSize(window.innerWidth, window.innerHeight);
-		renderer.setClearColor(0xCFCFCF);
-		document.body.appendChild(renderer.domElement);
+    window.onload = function() {
+	document.body.appendChild(progressBar);
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 10000);
+        var renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0xCFCFCF);
+        document.body.appendChild(renderer.domElement);
 
-		camera.position.y =  8.555;
+    camera.position.y = 8.5;
 		camera.position.x = -8.777;
 		camera.position.z = -8.888;
 
