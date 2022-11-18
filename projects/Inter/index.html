@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="moroz69off™">
+  <meta name="Keywords" content="moroz69off, web-dev">
+  <meta name="Description" content="moroz69off">
+  <title>Document</title>
+ </head>
+ <body>
+  <div class="modal modal_claim fancybox-content" id="modal_claim" style="display: inline-block;">
+  <div class="modal_window">
+    <div class="title">Заявка на участие</div>
+    <div class="modal_claim_text">
+     <p>Пожалуйста, заполните эту форму заявки и загрузите свою презентацию. В презентации, пожалуйста, опишите проблему/вопрос, который решает ваш продукт, что вы предлагаете на рынке, опыт вашей команды (существующие продажи и пилотные проекты, если они есть), кто ваша команда (не менее двух человек), какие есть результаты уже сейчас, какой у вас есть запрос на инвестиции.</p>
+     <p><b>Внимание!</b> Если вы ранее подавали заявку на участие в акселераторе, укажите другой адрес электронной почты при заполнении формы.</p>
+    </div>
+    <form action="claim_base" method="post" class="ajax modal_claim_form">
+      <input type="hidden" name="tmp" value="secret">
+      <input type="hidden" name="page" value="glavnaya">
+
+      <div class="title">Информация о проекте</div>
+      <div class="modal_claim_form_project">
+        <div class="modal_claim_form_project_row">
+          <label>
+                        <input type="text" name="title" placeholder="* Название проекта">
+          </label>
+          <label>
+                        <textarea name="description" placeholder="* Кратко о продукте/решении"></textarea>
+          </label>
+        </div>
+        <div class="modal_claim_form_stage">
+          <div class="modal_claim_form_stage_title label_title"><i>*</i> Стадия развития проекта</div>
+          <div class="modal_claim_form_stage_fields">
+            <label>
+              <input type="radio" name="stage" value="Прототип">
+              <div>Прототип</div>
+            </label>
+            <label>
+              <input type="radio" name="stage" value="Готовый продукт">
+              <div>Готовый продукт</div>
+            </label>
+          </div>
+        </div>
+        <div class="uploader">
+          <label class="uploader_head">
+            <input type="file" name="files[]" multiple="">
+            <svg class="uploader_svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="uploader_path" d="M8.2084 17.3868L18.32 7.27519C21.2333 4.36191 25.9568 4.36191 28.8701 7.27519C30.2843 8.6894 31.0055 10.5279 31.0479 12.3805C31.0904 14.3463 30.3691 16.3262 28.863 17.8323L16.1563 30.539C15.131 31.5643 13.7733 32.0593 12.4298 32.031C11.1641 31.9956 9.90545 31.5007 8.94379 30.539C6.94975 28.545 6.94975 25.3206 8.94379 23.3265L21.7 10.5703C22.697 9.57329 24.3092 9.57329 25.3062 10.5703C25.7871 11.0511 26.0346 11.6805 26.0487 12.3169C26.0699 12.9886 25.8154 13.6674 25.2992 14.1836L15.4633 24.0195" stroke="#25222C" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round"></path>
+            </svg>
+            <div class="uploader_head_placeholder"><i>*</i>Прикрепить презентацию <small>.pdf или .pptx до 50 Мб</small></div>
+          </label>
+                  </div>
+      </div>
+
+      <div class="title">Контактная информация</div>
+      <div class="modal_claim_form_persone">
+        <label>
+                    <input type="text" name="name" placeholder="*ФИО контактного лица по заявке">
+        </label>
+        <label>
+                    <input type="email" name="email" placeholder="*Ваша контактная почта">
+          <small>*если вы подаете 2 и более заявки, вы должны указать уникальный адрес почты для каждой заявки</small>
+        </label>
+        <label>
+                    <input type="tel" name="tel" placeholder="*Ваш контактный телефон">
+        </label>
+        <label>
+                    <input type="text" name="from" placeholder="*Откуда узнали про Фонд «ТИМ»?">
+        </label>
+      </div>
+
+
+      <div class="modal_claim_form_action">
+        <button class="modal_claim_form_submit btn" type="submit">Отправить заявку</button>
+        <div class="modal_claim_form_agree"><small>
+                      <p>Нажимая на кнопку, я соглашаюсь c <a target="_blank" href="/docs/politika-obrabotki-pd.pdf">политикой обработки персональных данных и пользовательским соглашением</a></p>
+                  </small></div>
+      </div>
+
+    </form>
+  <button class="modal_close" type="button" data-fancybox-close=""><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="39.3536" y1="1.35355" x2="1.35355" y2="39.3536" stroke="#353535"></line><line x1="0.353553" y1="0.646447" x2="39.3536" y2="39.6464" stroke="#353535"></line></svg></button></div>
+</div>
+ </body>
+</html>
