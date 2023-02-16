@@ -3,7 +3,7 @@
 	<head>
 		<meta name="Author" content="moroz69off">
 		<meta name="Keywords" content="moroz69off, web-dev, бесплатно без смс и регистрации">
-		<meta name="Description" content="Дневник бездельника. Площадка для экспериментов веб-разработки">
+		<meta name="Description" content="Площадка для экспериментов веб-разработки. Дневник бездельника.">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -79,8 +79,8 @@
 				mesh.rotation.x = - Math.PI / 2;
 				mesh.receiveShadow = true;
 				scene.add( mesh );
-				const grid = new THREE.GridHelper( 20, 20, 0x000000, 0x000000 );
-				grid.material.opacity = 0.5;
+				const grid = new THREE.GridHelper( 200, 200, 0x000000, 0x000000 );
+				grid.material.opacity = 0.3;
 				grid.material.transparent = true;
 				scene.add( grid );
 				// model
